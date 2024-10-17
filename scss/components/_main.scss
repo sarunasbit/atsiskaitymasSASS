@@ -1,0 +1,86 @@
+//----------------- Main Company Logos---------------------
+main {
+    margin-top: 8em;
+    .main__clients {
+        @include DisplayColumn;
+        align-items: center;
+
+        h4 {
+            @include fonts($card-font-text)
+        }
+
+        .main__logos {
+            margin-top: 1.5em;
+            display: flex;
+            align-items: baseline;
+            gap: 3em;
+            @media(max-width:980px) {
+                flex-direction: column;
+                align-items: center;
+            }
+            img {
+                height: 1.875em;
+            }
+        }    
+    }
+
+    // -------------------Main Career---------------
+
+    .main__content {
+        .main__content__text {
+            @include DisplayColumn;
+            justify-content: center;
+            align-items: center;
+            margin: 6em 0;
+            p {
+                @include fonts($main-font-text);
+            }
+            h2 {
+                @include fonts($main-font-header, $header-font-weight);
+                position: relative;
+            }
+            span {
+                position: absolute;
+                bottom: 10%;
+                right: 0;
+                background-color: $btn-color;
+                height: 0.3em;
+                width: 3.5em;
+                z-index: -1;
+            }
+            
+        }
+    // ----------------Main Cards-----------------
+        .main__cards {
+            @include DisplayRow;
+            justify-content: space-between;
+            gap: 2em;
+            margin-bottom: 3em;
+            @media(max-width: 980px) {
+                flex-wrap: wrap;
+                justify-content: center;
+            }
+            
+            .card {
+                border-radius: 1em;
+                overflow: hidden;
+                img {
+                    object-fit: cover;
+                    flex-grow: 1;
+                }
+                .card-body {
+                    flex: 0;
+                }
+
+                h5 {
+                    @include fonts($card-font-head);
+                }
+
+                p{
+                    @include fonts($card-font-text);
+                    color: $text-color-p;
+                }
+            }
+        }
+    }
+}

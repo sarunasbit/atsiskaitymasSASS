@@ -1,0 +1,71 @@
+    nav {
+    align-items: baseline;
+    padding: 1em 0;
+
+    .nav__logo {
+        @include fonts($nav-font-logo);
+    }
+
+    .nav__links {
+        display: flex;
+        @media(min-width: 960px) {
+            flex-direction: row;
+            gap: 2.5em;
+            margin: auto;
+        }
+        // Nav Animitaion Mobile None
+        li{
+            @include fonts($nav-font-size, $nav-font-weight);
+            color: $text-color;
+            list-style: none;
+            cursor: pointer;
+            // Nav Animation Desktop
+            @media (min-width: 960px) {
+                &:after {
+                    display: block;
+                    content: '';
+                    width: 0;
+                    height: 2px;
+                    background: $text-color;
+                    transition: width 0.8s;
+                }
+                &:hover::after {
+                    width: 100%;
+                }
+            }
+        }
+
+        
+    }
+
+    .nav__item__button {
+        display: flex;
+            .nav__button{
+                @include fonts($nav-font-size, $nav-font-weight);
+                text-decoration: none;
+                color: $text-color;
+            }
+    }
+
+    @media(min-width: 980px) {
+        .nav__item__button {
+            justify-content: flex-end;
+        }
+
+        .nav__item__button .nav__button {
+            @include fonts($nav-font-size, $nav-font-weight);
+            color: $text-color;
+            border: 1px solid $text-color;
+            border-radius: 8px;
+            text-decoration: none;
+            padding: 0.4em 1.3em;
+            transition: background-color 1.5s ease;
+                &:hover {
+                background-color: $btn-color;
+                }
+        }
+
+        
+        
+    }
+}

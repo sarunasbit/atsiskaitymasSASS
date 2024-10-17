@@ -1,0 +1,14 @@
+@mixin fonts($size, $weight: 400) {
+    font-size: $size;
+    font-weight: $weight;
+}
+
+@mixin DisplayColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin DisplayRow {
+    display: flex;
+    flex-direction: row;
+}

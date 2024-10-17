@@ -1,0 +1,79 @@
+header {
+    @include DisplayColumn;
+    gap: 6em;
+    @media(max-width:990px) {
+        text-align: center;
+        margin: 0 auto;
+    }
+    @media(min-width: 990px) {
+        @include DisplayRow;
+        margin: 4em 0;
+        gap: 5em;
+    }
+
+    .header__title {
+        @include DisplayColumn;
+        h1 {
+            @include fonts($header-font-h1, $header-font-weight);
+            margin: 0.8em 0em;
+        }
+
+        p {
+            @include fonts($header-font-text, $nav-font-weight);
+            color: $text-color-p;
+            padding-bottom: 3.5em;
+            @media(min-width: 990px) {
+                inline-size: 25em;
+                overflow-wrap: break-word;
+            }
+        }
+
+        .header__button {
+            @extend .buttonHeader;
+        }
+    }
+
+    .header__content {
+        position: relative;
+        .header__image {
+        border-radius: 50%;
+        max-width: 100%;
+        }
+
+        .header__item {
+            background-color: $header-review-color;
+            padding: 0.8em 1.4em;
+            border-radius: 15px;
+            width: fit-content;
+            cursor: pointer;
+            position: absolute;
+            top: 78%;
+            left:5%;
+            @media(min-width: 990px) {
+                top: 79%;
+            }
+
+            h5{
+                @include fonts($header-font-text, $header-font-text);
+                margin: 0;
+            }
+            p{
+                @include fonts($header-font-review);;
+                color: $text-color-p;
+                margin-bottom: 0.8em;
+            }   
+        }
+        
+        .header__play__icon {
+            position: absolute;
+            top: 40%;
+            left: 82%;
+            max-width: 100%;
+            cursor: pointer;
+            @media (min-width: 990px) {
+                top: 40%;
+                left: 92%;
+            }
+        }
+    }
+}

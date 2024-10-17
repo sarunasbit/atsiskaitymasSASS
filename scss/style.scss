@@ -1,0 +1,12 @@
+@import 'bootstrap.scss';
+//Colors. Fonts, Weight
+@import 'colors/_var';
+// Buttons
+@import 'ui/button';
+// Custom mixins
+@import 'mixins/custom';
+//Page body
+@import 'components/body';
+@import 'components/nav';
+@import 'components/header';
+@import 'components/main';
